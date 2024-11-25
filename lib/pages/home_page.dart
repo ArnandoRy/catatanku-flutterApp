@@ -15,6 +15,11 @@ class HomePage extends StatelessWidget {
         backgroundColor: Colors.amber[200],
       ),
       body: Obx(() {
+        if (catatanC.catatan.isEmpty) {
+          return Center(
+            child: Text("Belum ada catatan", style: TextStyle(fontSize: 16)),
+          );
+        }
         return ListView.builder(
             itemCount: catatanC.catatan.length,
             itemBuilder: (context, index) {
